@@ -1,0 +1,124 @@
+/* :root {
+  --primary-blue: hsl(231, 100%, 48%);
+  --light-blue: hsl(231, 100%, 85%);
+} */
+:root {
+  /* Dark Mode Defaults */
+  --bg: hsl(231, 100%, 5%);
+  --nav-bg: hsl(231, 100%, 48%);
+  --text: hsl(231, 100%, 85%);
+  --nav-text: hsl(231, 100%, 85%);
+  /* --a-text: #c1ccca; */
+  --highlight-bg: hsl(231, 100%, 85%);
+  --border: #EAF4F4;
+
+  /* Light Mode Overrides (optional for future toggle) */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #EAF4F4;
+      --nav-bg: hsl(231, 100%, 48%);
+      --text: hsl(231, 100%, 48%);
+      --nav-text: hsl(231, 100%, 85%);
+      --highlight-bg: hsl(231, 100%, 85%);
+      --border: hsl(231, 100%, 48%);
+    }
+  }
+}
+
+body.light-mode {
+  --bg: #EAF4F4;
+  --nav-bg: hsl(231, 100%, 48%);
+  --text: hsl(231, 100%, 48%);
+  --nav-text: hsl(231, 100%, 85%);
+  --highlight-bg: hsl(231, 100%, 85%);
+  --border: hsl(231, 100%, 48%);
+}
+
+
+body {
+  margin: 10px;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensures the body covers the full viewport height */
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Navbar */
+nav {
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 40px;
+  gap: 30px;
+  z-index: 1;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  /* border-radius: 10px 30px 10px 30px; */
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+
+
+footer a,
+nav a {
+  text-decoration: none;
+  color: hsl(231, 90%, 95%);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+footer a:hover,
+nav a:hover {
+  color: hsl(231, 90%, 5%);
+  background-color: hsla(231, 90%, 95%, .5);
+  font-size: 110%;
+}
+
+footer a:visited,
+nav a:visited {
+  color: hsl(231, 90%, 90%);
+}
+
+#logo {
+  margin-right: auto;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 40px;
+  gap: 30px;
+  z-index: 1;
+  /* border-radius: 30px 10px 30px 10px; */
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+    border-top: 1px solid var(--border);
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: var(--nav-text);
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.5);
+}
