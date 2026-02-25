@@ -9,8 +9,9 @@
   --text: hsl(231, 100%, 85%);
   --nav-text: hsl(231, 100%, 85%);
   /* --a-text: #c1ccca; */
-  --highlight-bg: hsl(231, 100%, 85%);
+  --highlight-bg: hsl(231, 100%, 5%);
   --border: #EAF4F4;
+  --box-bg: hsl(231, 100%, 48%);
 
   /* Light Mode Overrides (optional for future toggle) */
   @media (prefers-color-scheme: light) {
@@ -21,6 +22,7 @@
       --nav-text: hsl(231, 100%, 85%);
       --highlight-bg: hsl(231, 100%, 85%);
       --border: hsl(231, 100%, 48%);
+        --box-bg: hsl(231, 100%, 48%);
     }
   }
 }
@@ -32,6 +34,7 @@ body.light-mode {
   --nav-text: hsl(231, 100%, 85%);
   --highlight-bg: hsl(231, 100%, 85%);
   --border: hsl(231, 100%, 48%);
+    --box-bg: hsl(231, 100%, 48%);
 }
 
 
@@ -91,6 +94,34 @@ nav a:visited {
 
 main {
   flex: 1;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--highlight-bg);
+  justify-content: space-evenly;
+  border: var(--border) solid 3px;
+  min-height: 25vh;
+}
+
+.link-image {
+  background-color: var(--box-bg);
+  width: 25vw;
+  border-radius: 15px;
+  margin: 15px;
+  aspect-ratio: 16/12;
+}
+
+.link-description {
+  background-color: var(--box-bg);
+  width: 50vw;
+  border-radius: 15px;
+  margin: 15px;
 }
 
 iframe {
