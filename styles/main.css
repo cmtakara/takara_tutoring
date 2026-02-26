@@ -12,6 +12,7 @@
   --highlight-bg: hsl(231, 100%, 5%);
   --border: #EAF4F4;
   --box-bg: hsl(231, 100%, 48%);
+  --box-text: hsl(231, 100%, 85%);
 
   /* Light Mode Overrides (optional for future toggle) */
   @media (prefers-color-scheme: light) {
@@ -22,7 +23,8 @@
       --nav-text: hsl(231, 100%, 85%);
       --highlight-bg: hsl(231, 100%, 85%);
       --border: hsl(231, 100%, 48%);
-        --box-bg: hsl(231, 100%, 48%);
+      --box-bg: hsl(231, 100%, 48%);
+      --box-text: hsl(231, 100%, 85%);
     }
   }
 }
@@ -34,7 +36,8 @@ body.light-mode {
   --nav-text: hsl(231, 100%, 85%);
   --highlight-bg: hsl(231, 100%, 85%);
   --border: hsl(231, 100%, 48%);
-    --box-bg: hsl(231, 100%, 48%);
+  --box-bg: hsl(231, 100%, 48%);
+  --box-text: hsl(231, 100%, 85%);
 }
 
 
@@ -64,39 +67,45 @@ nav {
   /* border-radius: 10px 30px 10px 30px; */
   margin-bottom: 10px;
   border-bottom: 1px solid var(--border);
+    font-size: 3vh;
 }
 
 
 
 footer a,
-nav a {
+nav a,
+p a {
   text-decoration: none;
-  color: hsl(231, 90%, 95%);
+  color: hsl(231, 95%, 85%);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 footer a:hover,
-nav a:hover {
+nav a:hover,
+p a:hover {
   color: hsl(231, 90%, 5%);
   background-color: hsla(231, 90%, 95%, .5);
   font-size: 110%;
 }
 
 footer a:visited,
-nav a:visited {
-  color: hsl(231, 90%, 90%);
+nav a:visited,
+p a:visited {
+  color: hsl(231, 95%, 75%);
 }
 
 #logo {
   margin-right: auto;
+  padding: 0;
 }
 
 main {
   flex: 1;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -107,6 +116,7 @@ h1, h2 {
   justify-content: space-evenly;
   border: var(--border) solid 3px;
   min-height: 25vh;
+  align-items: center;
 }
 
 .link-image {
@@ -115,6 +125,12 @@ h1, h2 {
   border-radius: 15px;
   margin: 15px;
   aspect-ratio: 16/12;
+  transition: transform 0.3s ease;
+}
+
+.link-image:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .link-description {
@@ -122,6 +138,7 @@ h1, h2 {
   width: 50vw;
   border-radius: 15px;
   margin: 15px;
+  color: var(--box-text);
 }
 
 iframe {
@@ -133,6 +150,11 @@ iframe {
   /* Set width to 100% of the viewport width */
   border: none;
   /* Remove default border */
+}
+
+div p {
+  text-align: center;
+  font-size: 3vh;
 }
 
 footer {
@@ -150,6 +172,7 @@ footer {
   font-weight: 500;
   transition: color 0.3s;
   border-top: 1px solid var(--border);
+      font-size: 3vh;
 }
 
 #theme-toggle {
